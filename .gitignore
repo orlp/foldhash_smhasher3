@@ -9,6 +9,7 @@
 /.gitattributes
 /.mailmap
 /.devbox
+/crates/**/target
 
 *.a
 *.o

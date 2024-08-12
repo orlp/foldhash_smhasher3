@@ -10,6 +10,7 @@ set(HASH_SRC_FILES
 #
 #  hashes/pmp_multilinear.cpp
   hashes/farmhash.cpp
+  hashes/foldhash.cpp
   hashes/mum_mir.cpp
   hashes/halftimehash.cpp
   hashes/blake3.cpp

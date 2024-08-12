@@ -180,6 +180,17 @@ add_custom_command(
 # Build all the hashes
 ########################################
 
+include(FetchContent)
+
+FetchContent_Declare(
+    Corrosion
+    GIT_REPOSITORY https://github.com/corrosion-rs/corrosion.git
+    GIT_TAG v0.5
+)
+FetchContent_MakeAvailable(Corrosion)
+
+corrosion_import_crate(MANIFEST_PATH crates/foldhash-wrapper/Cargo.toml)
+
 add_library(
   SMHasher3Hashlib STATIC
 #
@@ -252,7 +263,7 @@ target_include_directories(SMHasher3Tests PRIVATE util PUBLIC include/common)
 
 add_executable(SMHasher3 main.cpp)
 target_include_directories(SMHasher3 PUBLIC include/common PRIVATE util tests include/hashlib)
-target_link_libraries(SMHasher3 SMHasher3Tests SMHasher3Hashlib ${threads_link_command})
+target_link_libraries(SMHasher3 SMHasher3Tests SMHasher3Hashlib foldhash_wrapper ${threads_link_command})
 
 ########################################
 # Miscellany

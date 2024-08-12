@@ -1,0 +1,11 @@
+[package]
+name = "foldhash-wrapper"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+foldhash = { path = "../../../foldhash" }
+
+[lib]
+name = "foldhash_wrapper"
+crate-type = ["staticlib"]
