@@ -23,6 +23,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  */
+
 #include "Platform.h"
 #include "Hashlib.h"
 #include "Mathmult.h"
@@ -162,7 +163,7 @@ static void shuffle( uint64_t vals[2] ) {
             vals[1] = BSWAP64(vals[1]);
         }
 #else
-  #error "Not implemented yet"
+        throw "unimplemented";
 #endif
     } else {
         vals[0] = BSWAP64(vals[0]);
